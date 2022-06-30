@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="icon" type="image/x-icon" href="./assets/Images/cdMusic.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Trispace:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet/less"
+      type="text/css"
+      href="./assets/CSS/style.less"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="player">
+      <div class="dashboard">
+        <header>
+          <h4 class="status">Now playing</h4>
+          <h2 class="song_name"></h2>
+        </header>
+
+        <div class="cd">
+          <div class="sound_wave"></div>
+          <div class="cd_thumb"></div>
+        </div>
+
+        <div class="control">
+          <div class="btn btn-repeat" title="Lặp lại">
+            <i class="fas fa-redo"></i>
+          </div>
+          <div class="btn btn-prev" title="Bài trước">
+            <i class="fas fa-step-backward"></i>
+          </div>
+          <div class="btn btn-toggle-play">
+            <i class="fas fa-pause icon-pause"></i>
+            <i class="fas fa-play icon-play"></i>
+          </div>
+          <div class="btn btn-next" title="Bài tiếp theo">
+            <i class="fas fa-step-forward"></i>
+          </div>
+          <div class="btn btn-random" title="Phát ngẫu nhiên">
+            <i class="fas fa-random"></i>
+          </div>
+        </div>
+
+        <input
+          type="range"
+          id="progress"
+          class="progress"
+          value="0"
+          step="1"
+          min="0"
+          max="100"
+        />
+
+        <audio id="audio" src=""></audio>
+      </div>
+
+      <div class="playlist"></div>
+    </div>
+    <script src="./assets/JavaScript/helper.js"></script>
+    <script src="./assets/JavaScript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+  </body>
+</html>
