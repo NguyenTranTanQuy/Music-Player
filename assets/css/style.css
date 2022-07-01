@@ -1,3 +1,207 @@
-.cd {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  letter-spacing: 0.1rem;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.player {
+  position: relative;
+}
+.player .icon-pause {
+  display: none;
+}
+.player.playing .sound_wave {
+  display: block;
+}
+.player.playing .icon-play {
+  display: none;
+}
+.player.playing .icon-pause {
+  display: inline-block;
+}
+.player .dashboard {
+  background-color: #fff;
+  background: #fff
+    url("https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/jisoo.jpg")
+    no-repeat fixed;
+  background-size: contain;
+  padding: 2rem 2rem 1.6rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0.2rem;
+  border-bottom: 1px solid #ebebeb;
+}
+.player .dashboard header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.player .dashboard .status {
+  font-size: 1.2rem;
+  color: #ec1f55;
+}
+.player .dashboard .song_name {
+  font-size: 2rem;
+  color: #333;
+  line-height: 4rem;
+  text-transform: capitalize;
+}
+.player .dashboard .cd {
+  display: flex;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
   width: 200px;
+}
+.player .dashboard .cd_thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+}
+.player .dashboard .control {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 0 0.8rem 0;
+}
+.player .dashboard .control .btn {
+  color: #666;
+  padding: 2rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.player .dashboard .control .btn.active {
+  color: #ec1f55;
+}
+.player .dashboard .control .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 2.4rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ec1f55;
+}
+.player .dashboard .progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background-color: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  border-radius: 5px;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s linear;
+}
+.player .dashboard .progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ec1f55;
+  cursor: pointer;
+}
+.player .playlist {
+  margin-top: 408px;
+  padding: 1.2rem;
+  width: 100vw;
+}
+.player .playlist .song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  background-color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  max-height: 7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.player .playlist .song.active {
+  background-color: #ec1f55;
+}
+.player .playlist .song.active .option,
+.player .playlist .song.active .author,
+.player .playlist .song.active .title {
+  color: #fff;
+}
+.player .playlist .song .thumb {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+.player .playlist .song .body {
+  flex: 1;
+  padding: 0 1.6rem;
+}
+.player .playlist .song .title {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  line-height: 2.5rem;
+  color: #333;
+}
+.player .playlist .song .author {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: #999;
+}
+.player .playlist .song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
+.sound_wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25%;
+  padding-top: 25%;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  background-image: url("https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/icons/icon-playing.gif");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: 50%;
+  border: 1px solid #fff;
+  z-index: 2;
+  display: none;
+}
+@keyframes rotateCD {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 380px) {
+  .title {
+    font-weight: 500;
+  }
+  .author {
+    display: none;
+  }
+  .option {
+    display: none;
+  }
 }
